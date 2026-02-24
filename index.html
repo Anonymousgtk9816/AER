@@ -2,62 +2,93 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>音频对比</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音频展示页 - Libri Test M</title>
     <style>
-        table {
-            border-collapse: collapse;
-            width: 80%;
-            margin: 20px auto;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f6f8fa; }
+        h1 { text-align: center; color: #24292e; }
+        .audio-item { background: white; padding: 15px; margin-bottom: 10px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.12); display: flex; align-items: center; justify-content: space-between; }
+        .file-name { font-weight: bold; color: #0366d6; margin-right: 15px; flex: 1; word-break: break-all; }
+        audio { height: 40px; }
+        .folder-tag { background: #e1e4e8; padding: 2px 6px; border-radius: 4px; font-size: 0.8em; color: #586069; margin-right: 10px;}
     </style>
 </head>
 <body>
-    <h2 style="text-align: center;">音频文件对比</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>文件名</th>
-                <th>试听</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>600h-84-121550-0031.wav</td>
-                <td><audio controls src="600h-84-121550-0031.wav" type="audio/wav"></audio></td>
-            </tr>
-            <tr>
-                <td>b1b-84-121550-0031.wav</td>
-                <td><audio controls src="b1b-84-121550-0031.wav" type="audio/wav"></audio></td>
-            </tr>
-            <tr>
-                <td>mcadams-84-121550-0031.wav</td>
-                <td><audio controls src="mcadams-84-121550-0031.wav" type="audio/wav"></audio></td>
-            </tr>
-            <tr>
-                <td>mine-84-121550-0031.wav</td>
-                <td><audio controls src="mine-84-121550-0031.wav" type="audio/wav"></audio></td>
-            </tr>
-            <tr>
-                <td>nac-84-121550-0031.wav</td>
-                <td><audio controls src="nac-84-121550-0031.wav" type="audio/wav"></audio></td>
-            </tr>
-            <tr>
-                <td>sttts-84-121550-0031.wav</td>
-                <td><audio controls src="sttts-84-121550-0031.wav" type="audio/wav"></audio></td>
-            </tr>
-            <tr>
-                <td>w2v-84-121550-0031.wav</td>
-                <td><audio controls src="w2v-84-121550-0031.wav" type="audio/wav"></audio></td>
-            </tr>
-        </tbody>
-    </table>
+
+    <h1>🎧 音频样本展示 (libri_test_m)</h1>
+    <p style="text-align: center; color: #666;">点击播放按钮即可试听</p>
+
+    <!-- 音频列表开始 -->
+    
+    <div class="audio-item">
+        <div style="display:flex; align-items:center;">
+            <span class="folder-tag">libri_test_m</span>
+            <span class="file-name">600h-61-70970-0002.wav</span>
+        </div>
+        <audio controls src="libri_test_m/600h-61-70970-0002.wav"></audio>
+    </div>
+
+    <div class="audio-item">
+        <div style="display:flex; align-items:center;">
+            <span class="folder-tag">libri_test_m</span>
+            <span class="file-name">b1b-61-70970-0002.wav</span>
+        </div>
+        <audio controls src="libri_test_m/b1b-61-70970-0002.wav"></audio>
+    </div>
+
+    <div class="audio-item">
+        <div style="display:flex; align-items:center;">
+            <span class="folder-tag">libri_test_m</span>
+            <span class="file-name">gt-61-70970-0002.wav</span>
+        </div>
+        <audio controls src="libri_test_m/gt-61-70970-0002.wav"></audio>
+    </div>
+    
+    <div class="audio-item">
+        <div style="display:flex; align-items:center;">
+            <span class="folder-tag">libri_test_m</span>
+            <span class="file-name">mcadams-61-70970-0002.wav</span>
+        </div>
+        <audio controls src="libri_test_m/mcadams-61-70970-0002.wav"></audio>
+    </div>
+
+    <div class="audio-item">
+        <div style="display:flex; align-items:center;">
+            <span class="folder-tag">libri_test_m</span>
+            <span class="file-name">mine-61-70970-0002.wav</span>
+        </div>
+        <audio controls src="libri_test_m/mine-61-70970-0002.wav"></audio>
+    </div>
+
+    <div class="audio-item">
+        <div style="display:flex; align-items:center;">
+            <span class="folder-tag">libri_test_m</span>
+            <span class="file-name">nac-61-70970-0002.wav</span>
+        </div>
+        <audio controls src="libri_test_m/nac-61-70970-0002.wav"></audio>
+    </div>
+
+    <div class="audio-item">
+        <div style="display:flex; align-items:center;">
+            <span class="folder-tag">libri_test_m</span>
+            <span class="file-name">sttts-61-70970-0002.wav</span>
+        </div>
+        <audio controls src="libri_test_m/sttts-61-70970-0002.wav"></audio>
+    </div>
+
+    <div class="audio-item">
+        <div style="display:flex; align-items:center;">
+            <span class="folder-tag">libri_test_m</span>
+            <span class="file-name">w2v-61-70970-0002.wav</span>
+        </div>
+        <audio controls src="libri_test_m/w2v-61-70970-0002.wav"></audio>
+    </div>
+
+    <!-- 音频列表结束 -->
+
+    <footer style="text-align: center; margin-top: 30px; color: #888; font-size: 0.9em;">
+        Generated for GitHub Audio Demo
+    </footer>
+
 </body>
 </html>
