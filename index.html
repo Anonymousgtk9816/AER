@@ -3,92 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>音频展示页 - Libri Test M</title>
+    <title>Audio Comparison Table</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f6f8fa; }
-        h1 { text-align: center; color: #24292e; }
-        .audio-item { background: white; padding: 15px; margin-bottom: 10px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.12); display: flex; align-items: center; justify-content: space-between; }
-        .file-name { font-weight: bold; color: #0366d6; margin-right: 15px; flex: 1; word-break: break-all; }
-        audio { height: 40px; }
-        .folder-tag { background: #e1e4e8; padding: 2px 6px; border-radius: 4px; font-size: 0.8em; color: #586069; margin-right: 10px;}
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f6f8fa;
+            color: #24292e;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e1e4e8;
+        }
+        th {
+            background-color: #f6f8fa;
+            font-weight: 600;
+            color: #586069;
+            text-transform: uppercase;
+            font-size: 0.85em;
+            letter-spacing: 0.05em;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        tr:hover {
+            background-color: #f8f9fa;
+        }
+        /* 第一列样式 */
+        td:first-child {
+            font-weight: bold;
+            color: #0366d6;
+            width: 150px;
+        }
+        /* 音频播放器样式优化 */
+        audio {
+            width: 100%;
+            height: 36px;
+            outline: none;
+        }
+        /* 移动端适配 */
+        @media (max-width: 600px) {
+            th, td {
+                padding: 10px;
+                font-size: 14px;
+            }
+            td:first-child {
+                width: 100px;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <h1>🎧 音频样本展示 (libri_test_m)</h1>
-    <p style="text-align: center; color: #666;">点击播放按钮即可试听</p>
+    <h1>🎧 Audio Samples Comparison</h1>
 
-    <!-- 音频列表开始 -->
-    
-    <div class="audio-item">
-        <div style="display:flex; align-items:center;">
-            <span class="folder-tag">libri_test_m</span>
-            <span class="file-name">600h-61-70970-0002.wav</span>
-        </div>
-        <audio controls src="libri_test_m/600h-61-70970-0002.wav"></audio>
-    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Method</th>
+                <th>Audio Sample</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Row 1: Groundtruth -->
+            <tr>
+                <td>groundtruth</td>
+                <td>
+                    <audio controls src="libri_test_m/gt-61-70970-0002.wav"></audio>
+                </td>
+            </tr>
 
-    <div class="audio-item">
-        <div style="display:flex; align-items:center;">
-            <span class="folder-tag">libri_test_m</span>
-            <span class="file-name">b1b-61-70970-0002.wav</span>
-        </div>
-        <audio controls src="libri_test_m/b1b-61-70970-0002.wav"></audio>
-    </div>
+            <!-- Row 2: B1 -->
+            <tr>
+                <td>B1</td>
+                <td>
+                    <audio controls src="libri_test_m/b1b-61-70970-0002.wav"></audio>
+                </td>
+            </tr>
 
-    <div class="audio-item">
-        <div style="display:flex; align-items:center;">
-            <span class="folder-tag">libri_test_m</span>
-            <span class="file-name">gt-61-70970-0002.wav</span>
-        </div>
-        <audio controls src="libri_test_m/gt-61-70970-0002.wav"></audio>
-    </div>
-    
-    <div class="audio-item">
-        <div style="display:flex; align-items:center;">
-            <span class="folder-tag">libri_test_m</span>
-            <span class="file-name">mcadams-61-70970-0002.wav</span>
-        </div>
-        <audio controls src="libri_test_m/mcadams-61-70970-0002.wav"></audio>
-    </div>
+            <!-- Row 3: B2 -->
+            <tr>
+                <td>B2</td>
+                <td>
+                    <audio controls src="libri_test_m/mcadams-61-70970-0002.wav"></audio>
+                </td>
+            </tr>
 
-    <div class="audio-item">
-        <div style="display:flex; align-items:center;">
-            <span class="folder-tag">libri_test_m</span>
-            <span class="file-name">mine-61-70970-0002.wav</span>
-        </div>
-        <audio controls src="libri_test_m/mine-61-70970-0002.wav"></audio>
-    </div>
+            <!-- Row 4: B3 -->
+            <tr>
+                <td>B3</td>
+                <td>
+                    <audio controls src="libri_test_m/sttts-61-70970-0002.wav"></audio>
+                </td>
+            </tr>
 
-    <div class="audio-item">
-        <div style="display:flex; align-items:center;">
-            <span class="folder-tag">libri_test_m</span>
-            <span class="file-name">nac-61-70970-0002.wav</span>
-        </div>
-        <audio controls src="libri_test_m/nac-61-70970-0002.wav"></audio>
-    </div>
+            <!-- Row 5: B4 -->
+            <tr>
+                <td>B4</td>
+                <td>
+                    <audio controls src="libri_test_m/nac-61-70970-0002.wav"></audio>
+                </td>
+            </tr>
 
-    <div class="audio-item">
-        <div style="display:flex; align-items:center;">
-            <span class="folder-tag">libri_test_m</span>
-            <span class="file-name">sttts-61-70970-0002.wav</span>
-        </div>
-        <audio controls src="libri_test_m/sttts-61-70970-0002.wav"></audio>
-    </div>
+            <!-- Row 6: B5 -->
+            <tr>
+                <td>B5</td>
+                <td>
+                    <audio controls src="libri_test_m/w2v-61-70970-0002.wav"></audio>
+                </td>
+            </tr>
 
-    <div class="audio-item">
-        <div style="display:flex; align-items:center;">
-            <span class="folder-tag">libri_test_m</span>
-            <span class="file-name">w2v-61-70970-0002.wav</span>
-        </div>
-        <audio controls src="libri_test_m/w2v-61-70970-0002.wav"></audio>
-    </div>
+            <!-- Row 7: B6 -->
+            <tr>
+                <td>B6</td>
+                <td>
+                    <audio controls src="libri_test_m/600h-61-70970-0002.wav"></audio>
+                </td>
+            </tr>
 
-    <!-- 音频列表结束 -->
-
-    <footer style="text-align: center; margin-top: 30px; color: #888; font-size: 0.9em;">
-        Generated for GitHub Audio Demo
-    </footer>
+            <!-- Row 8: AER -->
+            <tr>
+                <td>AER</td>
+                <td>
+                    <audio controls src="libri_test_m/mine-61-70970-0002.wav"></audio>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
 </body>
 </html>
