@@ -3,148 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audio Comparison Table</title>
+    <title>Audio Comparison Matrix</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            max-width: 900px;
-            margin: 40px auto;
+            max-width: 1200px;
+            margin: 20px auto;
             padding: 20px;
             background-color: #f6f8fa;
             color: #24292e;
         }
         h1 {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
         }
+        
+        /* 表格容器，用于处理宽表格的滚动 */
+        .table-container {
+            overflow-x: auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+            padding-bottom: 10px;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
-            background: white;
-            border-radius: 6px;
-            overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+            min-width: 900px; 
         }
+
         th, td {
-            padding: 15px;
-            text-align: left;
+            padding: 12px 10px;
+            text-align: center;
             border-bottom: 1px solid #e1e4e8;
+            border-right: 1px solid #f0f0f0;
+            vertical-align: middle;
         }
+
         th {
             background-color: #f6f8fa;
             font-weight: 600;
             color: #586069;
-            text-transform: uppercase;
             font-size: 0.85em;
-            letter-spacing: 0.05em;
+            white-space: nowrap;
         }
+
+        /* 第一列固定样式 */
+        td:first-child, th:first-child {
+            position: sticky;
+            left: 0;
+            background-color: white;
+            z-index: 1;
+            text-align: left;
+            font-weight: bold;
+            color: #0366d6;
+            min-width: 100px;
+            border-right: 2px solid #e1e4e8;
+        }
+        
+        th:first-child {
+            background-color: #f6f8fa;
+            z-index: 2;
+        }
+
         tr:last-child td {
             border-bottom: none;
         }
-        tr:hover {
+
+        tr:hover td {
             background-color: #f8f9fa;
         }
-        /* 第一列样式 */
-        td:first-child {
-            font-weight: bold;
-            color: #0366d6;
-            width: 150px;
+        
+        tr:hover td:first-child {
+            background-color: #f0f4f8; 
         }
-        /* 音频播放器样式优化 */
+
+        /* 音频播放器样式 */
         audio {
-            width: 100%;
-            height: 36px;
+            height: 32px;
+            width: 140px;
             outline: none;
+            display: block;
+            margin: 0 auto;
         }
-        /* 移动端适配 */
-        @media (max-width: 600px) {
-            th, td {
-                padding: 10px;
-                font-size: 14px;
-            }
-            td:first-child {
-                width: 100px;
-            }
+        
+        .note {
+            text-align: center;
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 10px;
+        }
+        
+        .file-id {
+            display: block;
+            font-size: 0.7em;
+            color: #999;
+            margin-top: 4px;
+            font-weight: normal;
         }
     </style>
 </head>
 <body>
 
-    <h1>🎧 Audio Samples Comparison</h1>
+    <h1>🎧 Cross-Dataset Audio Comparison</h1>
+    <p class="note">提示：如果表格超出屏幕，请左右滑动查看</p>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Method</th>
-                <th>Audio Sample</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Row 1: Groundtruth -->
-            <tr>
-                <td>groundtruth</td>
-                <td>
-                    <audio controls src="libri_test_m/gt-61-70970-0002.wav"></audio>
-                </td>
-            </tr>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Method</th>
+                    <th>
+                        libri_dev_f
+                        <span class="file-id">84-121550-0031</span>
+                    </th>
+                    <th>
+                        libri_dev_m
+                        <span class="file-id">174-50561-0003</span>
+                    </th>
+                    <th>
+                        libri_test_f
+                        <span class="file-id">121-127105-0029</span>
+                    </th>
+                    <th>
+                        libri_test_m
+                        <span class="file-id">61-70970-0002</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Row 1: Groundtruth -->
+                <tr>
+                    <td>groundtruth</td>
+                    <td><audio controls src="libri_dev_f/gt-84-121550-0031.wav"></audio></td>
+                    <td><audio controls src="libri_dev_m/gt-174-50561-0003.wav"></audio></td>
+                    <td><audio controls src="libri_test_f/gt-121-127105-0029.wav"></audio></td>
+                    <td><audio controls src="libri_test_m/gt-61-70970-0002.wav"></audio></td>
+                </tr>
 
-            <!-- Row 2: B1 -->
-            <tr>
-                <td>B1</td>
-                <td>
-                    <audio controls src="libri_test_m/b1b-61-70970-0002.wav"></audio>
-                </td>
-            </tr>
+                <!-- Row 2: B1 -->
+                <tr>
+                    <td>B1</td>
+                    <td><audio controls src="libri_dev_f/b1b-84-121550-0031.wav"></audio></td>
+                    <td><audio controls src="libri_dev_m/b1b-174-50561-0003.wav"></audio></td>
+                    <td><audio controls src="libri_test_f/b1b-121-127105-0029.wav"></audio></td>
+                    <td><audio controls src="libri_test_m/b1b-61-70970-0002.wav"></audio></td>
+                </tr>
 
-            <!-- Row 3: B2 -->
-            <tr>
-                <td>B2</td>
-                <td>
-                    <audio controls src="libri_test_m/mcadams-61-70970-0002.wav"></audio>
-                </td>
-            </tr>
+                <!-- Row 3: B2 -->
+                <tr>
+                    <td>B2</td>
+                    <td><audio controls src="libri_dev_f/mcadams-84-121550-0031.wav"></audio></td>
+                    <td><audio controls src="libri_dev_m/mcadams-174-50561-0003.wav"></audio></td>
+                    <td><audio controls src="libri_test_f/mcadams-121-127105-0029.wav"></audio></td>
+                    <td><audio controls src="libri_test_m/mcadams-61-70970-0002.wav"></audio></td>
+                </tr>
 
-            <!-- Row 4: B3 -->
-            <tr>
-                <td>B3</td>
-                <td>
-                    <audio controls src="libri_test_m/sttts-61-70970-0002.wav"></audio>
-                </td>
-            </tr>
+                <!-- Row 4: B3 -->
+                <tr>
+                    <td>B3</td>
+                    <td><audio controls src="libri_dev_f/sttts-84-121550-0031.wav"></audio></td>
+                    <td><audio controls src="libri_dev_m/sttts-174-50561-0003.wav"></audio></td>
+                    <td><audio controls src="libri_test_f/sttts-121-127105-0029.wav"></audio></td>
+                    <td><audio controls src="libri_test_m/sttts-61-70970-0002.wav"></audio></td>
+                </tr>
 
-            <!-- Row 5: B4 -->
-            <tr>
-                <td>B4</td>
-                <td>
-                    <audio controls src="libri_test_m/nac-61-70970-0002.wav"></audio>
-                </td>
-            </tr>
+                <!-- Row 5: B4 -->
+                <tr>
+                    <td>B4</td>
+                    <td><audio controls src="libri_dev_f/nac-84-121550-0031.wav"></audio></td>
+                    <td><audio controls src="libri_dev_m/nac-174-50561-0003.wav"></audio></td>
+                    <td><audio controls src="libri_test_f/nac-121-127105-0029.wav"></audio></td>
+                    <td><audio controls src="libri_test_m/nac-61-70970-0002.wav"></audio></td>
+                </tr>
 
-            <!-- Row 6: B5 -->
-            <tr>
-                <td>B5</td>
-                <td>
-                    <audio controls src="libri_test_m/w2v-61-70970-0002.wav"></audio>
-                </td>
-            </tr>
+                <!-- Row 6: B5 -->
+                <tr>
+                    <td>B5</td>
+                    <td><audio controls src="libri_dev_f/w2v-84-121550-0031.wav"></audio></td>
+                    <td><audio controls src="libri_dev_m/w2v-174-50561-0003.wav"></audio></td>
+                    <td><audio controls src="libri_test_f/w2v-121-127105-0029.wav"></audio></td>
+                    <td><audio controls src="libri_test_m/w2v-61-70970-0002.wav"></audio></td>
+                </tr>
 
-            <!-- Row 7: B6 -->
-            <tr>
-                <td>B6</td>
-                <td>
-                    <audio controls src="libri_test_m/600h-61-70970-0002.wav"></audio>
-                </td>
-            </tr>
+                <!-- Row 7: B6 -->
+                <tr>
+                    <td>B6</td>
+                    <td><audio controls src="libri_dev_f/600h-84-121550-0031.wav"></audio></td>
+                    <td><audio controls src="libri_dev_m/600h-174-50561-0003.wav"></audio></td>
+                    <td><audio controls src="libri_test_f/600h-121-127105-0029.wav"></audio></td>
+                    <td><audio controls src="libri_test_m/600h-61-70970-0002.wav"></audio></td>
+                </tr>
 
-            <!-- Row 8: AER -->
-            <tr>
-                <td>AER</td>
-                <td>
-                    <audio controls src="libri_test_m/mine-61-70970-0002.wav"></audio>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                <!-- Row 8: AER -->
+                <tr>
+                    <td>AER</td>
+                    <td><audio controls src="libri_dev_f/mine-84-121550-0031.wav"></audio></td>
+                    <td><audio controls src="libri_dev_m/mine-174-50561-0003.wav"></audio></td>
+                    <td><audio controls src="libri_test_f/mine-121-127105-0029.wav"></audio></td>
+                    <td><audio controls src="libri_test_m/mine-61-70970-0002.wav"></audio></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 </body>
 </html>
