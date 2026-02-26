@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,7 +26,7 @@
             font-size: 1.3rem;
         }
         
-        /* 表格容器 */
+        /* Table container */
         .table-container {
             overflow-x: auto;
             background: white;
@@ -58,7 +58,7 @@
             white-space: nowrap;
         }
 
-        /* 第一列固定样式 */
+        /* First column fixed style */
         td:first-child, th:first-child {
             position: sticky;
             left: 0;
@@ -88,7 +88,7 @@
             background-color: #f0f4f8; 
         }
 
-        /* 音频播放器样式 */
+        /* Audio player style */
         audio {
             height: 32px;
             width: 130px;
@@ -112,7 +112,7 @@
             font-weight: normal;
         }
 
-        /* 情绪标签颜色 */
+        /* Emotion tag colors */
         .tag-ang { color: #d73a49; }
         .tag-hap { color: #28a745; }
         .tag-neu { color: #0366d6; }
@@ -122,9 +122,9 @@
 <body>
 
     <h1>🎧 Audio Demo Page</h1>
-    <p class="note">提示：如果表格超出屏幕，请左右滑动查看</p>
+    <p class="note">Tip: Scroll horizontally if the table exceeds the screen</p>
 
-    <!-- ================= 表格 1: LibriSpeech ================= -->
+    <!-- ================= Table 1: LibriSpeech ================= -->
     <h2>1. LibriSpeech Cross-Dataset Comparison</h2>
     <div class="table-container">
         <table>
@@ -206,7 +206,7 @@
         </table>
     </div>
 
-    <!-- ================= 表格 2: IEMOCAP ================= -->
+    <!-- ================= Table 2: IEMOCAP ================= -->
     <h2>2. IEMOCAP Emotional Samples</h2>
     <div class="table-container">
         <table>
@@ -241,7 +241,7 @@
                     <td><audio controls src="IEMOCAP_sad/ori-Ses01M_impro02_M002.wav"></audio></td>
                 </tr>
 
-                <!-- Row 2: w/o $\gamma_t$ -->
+                <!-- Row 2: w/o γt -->
                 <tr>
                     <td>w/o &gamma;<sub>t</sub></td>
                     <td><audio controls src="IEMOCAP_ang/wo-Ses04F_impro05_F013.wav"></audio></td>
@@ -264,6 +264,3 @@
 
 </body>
 </html>
-
-
-
