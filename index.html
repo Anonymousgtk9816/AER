@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audio Comparison Matrix</title>
+    <title>Audio Demo - LibriSpeech & IEMOCAP</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -13,25 +13,33 @@
             background-color: #f6f8fa;
             color: #24292e;
         }
-        h1 {
+        h1, h2 {
             text-align: center;
             margin-bottom: 20px;
             font-size: 1.5rem;
+            color: #24292e;
+        }
+        h2 {
+            margin-top: 50px;
+            border-top: 2px solid #e1e4e8;
+            padding-top: 20px;
+            font-size: 1.3rem;
         }
         
-        /* 表格容器，用于处理宽表格的滚动 */
+        /* 表格容器 */
         .table-container {
             overflow-x: auto;
             background: white;
             border-radius: 8px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.12);
             padding-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            min-width: 900px; 
+            min-width: 800px; 
         }
 
         th, td {
@@ -83,7 +91,7 @@
         /* 音频播放器样式 */
         audio {
             height: 32px;
-            width: 140px;
+            width: 130px;
             outline: none;
             display: block;
             margin: 0 auto;
@@ -103,38 +111,34 @@
             margin-top: 4px;
             font-weight: normal;
         }
+
+        /* 情绪标签颜色 */
+        .tag-ang { color: #d73a49; }
+        .tag-hap { color: #28a745; }
+        .tag-neu { color: #0366d6; }
+        .tag-sad { color: #6f42c1; }
     </style>
 </head>
 <body>
 
-    <h1>🎧 Cross-Dataset Audio Comparison</h1>
+    <h1>🎧 Audio Demo Page</h1>
     <p class="note">提示：如果表格超出屏幕，请左右滑动查看</p>
 
+    <!-- ================= 表格 1: LibriSpeech ================= -->
+    <h2>1. LibriSpeech Cross-Dataset Comparison</h2>
     <div class="table-container">
         <table>
             <thead>
                 <tr>
                     <th>Method</th>
-                    <th>
-                        libri_dev_f
-                        <span class="file-id">84-121550-0031</span>
-                    </th>
-                    <th>
-                        libri_dev_m
-                        <span class="file-id">174-50561-0003</span>
-                    </th>
-                    <th>
-                        libri_test_f
-                        <span class="file-id">121-127105-0029</span>
-                    </th>
-                    <th>
-                        libri_test_m
-                        <span class="file-id">61-70970-0002</span>
-                    </th>
+                    <th>libri_dev_f<span class="file-id">84-121550-0031</span></th>
+                    <th>libri_dev_m<span class="file-id">174-50561-0003</span></th>
+                    <th>libri_test_f<span class="file-id">121-127105-0029</span></th>
+                    <th>libri_test_m<span class="file-id">61-70970-0002</span></th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Row 1: Groundtruth -->
+                <!-- GT -->
                 <tr>
                     <td>groundtruth</td>
                     <td><audio controls src="libri_dev_f/gt-84-121550-0031.wav"></audio></td>
@@ -142,8 +146,7 @@
                     <td><audio controls src="libri_test_f/gt-121-127105-0029.wav"></audio></td>
                     <td><audio controls src="libri_test_m/gt-61-70970-0002.wav"></audio></td>
                 </tr>
-
-                <!-- Row 2: B1 -->
+                <!-- B1 -->
                 <tr>
                     <td>B1</td>
                     <td><audio controls src="libri_dev_f/b1b-84-121550-0031.wav"></audio></td>
@@ -151,8 +154,7 @@
                     <td><audio controls src="libri_test_f/b1b-121-127105-0029.wav"></audio></td>
                     <td><audio controls src="libri_test_m/b1b-61-70970-0002.wav"></audio></td>
                 </tr>
-
-                <!-- Row 3: B2 -->
+                <!-- B2 -->
                 <tr>
                     <td>B2</td>
                     <td><audio controls src="libri_dev_f/mcadams-84-121550-0031.wav"></audio></td>
@@ -160,8 +162,7 @@
                     <td><audio controls src="libri_test_f/mcadams-121-127105-0029.wav"></audio></td>
                     <td><audio controls src="libri_test_m/mcadams-61-70970-0002.wav"></audio></td>
                 </tr>
-
-                <!-- Row 4: B3 -->
+                <!-- B3 -->
                 <tr>
                     <td>B3</td>
                     <td><audio controls src="libri_dev_f/sttts-84-121550-0031.wav"></audio></td>
@@ -169,8 +170,7 @@
                     <td><audio controls src="libri_test_f/sttts-121-127105-0029.wav"></audio></td>
                     <td><audio controls src="libri_test_m/sttts-61-70970-0002.wav"></audio></td>
                 </tr>
-
-                <!-- Row 5: B4 -->
+                <!-- B4 -->
                 <tr>
                     <td>B4</td>
                     <td><audio controls src="libri_dev_f/nac-84-121550-0031.wav"></audio></td>
@@ -178,8 +178,7 @@
                     <td><audio controls src="libri_test_f/nac-121-127105-0029.wav"></audio></td>
                     <td><audio controls src="libri_test_m/nac-61-70970-0002.wav"></audio></td>
                 </tr>
-
-                <!-- Row 6: B5 -->
+                <!-- B5 -->
                 <tr>
                     <td>B5</td>
                     <td><audio controls src="libri_dev_f/w2v-84-121550-0031.wav"></audio></td>
@@ -187,8 +186,7 @@
                     <td><audio controls src="libri_test_f/w2v-121-127105-0029.wav"></audio></td>
                     <td><audio controls src="libri_test_m/w2v-61-70970-0002.wav"></audio></td>
                 </tr>
-
-                <!-- Row 7: B6 -->
+                <!-- B6 -->
                 <tr>
                     <td>B6</td>
                     <td><audio controls src="libri_dev_f/600h-84-121550-0031.wav"></audio></td>
@@ -196,14 +194,69 @@
                     <td><audio controls src="libri_test_f/600h-121-127105-0029.wav"></audio></td>
                     <td><audio controls src="libri_test_m/600h-61-70970-0002.wav"></audio></td>
                 </tr>
-
-                <!-- Row 8: AER -->
+                <!-- AER -->
                 <tr>
                     <td>AER</td>
                     <td><audio controls src="libri_dev_f/mine-84-121550-0031.wav"></audio></td>
                     <td><audio controls src="libri_dev_m/mine-174-50561-0003.wav"></audio></td>
                     <td><audio controls src="libri_test_f/mine-121-127105-0029.wav"></audio></td>
                     <td><audio controls src="libri_test_m/mine-61-70970-0002.wav"></audio></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ================= 表格 2: IEMOCAP ================= -->
+    <h2>2. IEMOCAP Emotional Samples</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Method</th>
+                    <th>
+                        <span class="tag-ang">Anger</span>
+                        <span class="file-id">Ses04F_impro05_F013</span>
+                    </th>
+                    <th>
+                        <span class="tag-hap">Happy</span>
+                        <span class="file-id">Ses02F_impro07_F015</span>
+                    </th>
+                    <th>
+                        <span class="tag-neu">Neutral</span>
+                        <span class="file-id">Ses05F_impro08_F018</span>
+                    </th>
+                    <th>
+                        <span class="tag-sad">Sad</span>
+                        <span class="file-id">Ses01M_impro02_M002</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Row 1: Original -->
+                <tr>
+                    <td>Original (ori)</td>
+                    <td><audio controls src="IEMOCAP_ang/ori-Ses04F_impro05_F013.wav"></audio></td>
+                    <td><audio controls src="IEMOCAP_hap/ori-Ses02F_impro07_F015.wav"></audio></td>
+                    <td><audio controls src="IEMOCAP_neu/ori-Ses05F_impro08_F018.wav"></audio></td>
+                    <td><audio controls src="IEMOCAP_sad/ori-Ses01M_impro02_M002.wav"></audio></td>
+                </tr>
+
+                <!-- Row 2: w/o Module -->
+                <tr>
+                    <td>w/o Module (wo)</td>
+                    <td><audio controls src="IEMOCAP_ang/wo-Ses04F_impro05_F013.wav"></audio></td>
+                    <td><audio controls src="IEMOCAP_hap/wo-Ses02F_impro07_F015.wav"></audio></td>
+                    <td><audio controls src="IEMOCAP_neu/wo-Ses05F_impro08_F018.wav"></audio></td>
+                    <td><audio controls src="IEMOCAP_sad/wo-Ses01M_impro02_M002.wav"></audio></td>
+                </tr>
+
+                <!-- Row 3: AER -->
+                <tr>
+                    <td>AER (Ours)</td>
+                    <td><audio controls src="IEMOCAP_ang/AER-Ses04F_impro05_F013.wav"></audio></td>
+                    <td><audio controls src="IEMOCAP_hap/AER-Ses02F_impro07_F015.wav"></audio></td>
+                    <td><audio controls src="IEMOCAP_neu/AER-Ses05F_impro08_F018.wav"></audio></td>
+                    <td><audio controls src="IEMOCAP_sad/AER-Ses01M_impro02_M002.wav"></audio></td>
                 </tr>
             </tbody>
         </table>
