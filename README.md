@@ -21,15 +21,6 @@ All samples correspond directly to the tables in the paper:
 | **LibriSpeech** | Table 1 | Privacy & Intelligibility Comparison | `libri_dev_*` / `libri_test_*` |
 | **IEMOCAP** | Table 2 | Emotion Restoration Ablation Study | `IEMOCAP_*` |
 
-### File Naming Convention
-
-```
-{method}-{speaker_id}-{utterance_id}.wav
-```
-
-Example: `proposed-84-121550-0031.wav`
-
----
 
 ## Important Notice
 
