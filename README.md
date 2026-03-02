@@ -6,9 +6,8 @@
 
 ## Quick Access
 
-**Online Listening (Recommended):** Open `index.html` in any modern web browser. All audio samples are embedded with players—no download required.
-
-**Local Playback:** Download the audio folders and open `.wav` files with any media player.
+Download Folder: Download the AER_audio_sample folder from this repository to your local machine.
+Open Demo Page: Locate and open the index.html file within that folder using any modern web browser
 
 ---
 
