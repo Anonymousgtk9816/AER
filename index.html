@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audio Demo - LibriSpeech & IEMOCAP</title>
+    <title>Audio Demo - Anonymous Submission</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -117,11 +117,30 @@
         .tag-hap { color: #28a745; }
         .tag-neu { color: #0366d6; }
         .tag-sad { color: #6f42c1; }
+        
+        /* Anonymous notice */
+        .anonymous-notice {
+            background-color: #fff8c5;
+            border: 1px solid #f9c513;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #586069;
+        }
     </style>
 </head>
 <body>
 
     <h1>🎧 Audio Demo Page</h1>
+    
+    <div class="anonymous-notice">
+        <strong>Anonymous Submission Notice:</strong> This demo page is for double-blind review purposes only. 
+        All audio samples are anonymized. The public repository link will be available upon acceptance.
+    </div>
+    
     <p class="note">Tip: Scroll horizontally if the table exceeds the screen</p>
 
     <!-- ================= Table 1: LibriSpeech ================= -->
@@ -148,59 +167,59 @@
                 </tr>
                 <!-- B1 -->
                 <tr>
-                    <td>B1</td>
-                    <td><audio controls src="libri_dev_f/b1b-84-121550-0031.wav"></audio></td>
-                    <td><audio controls src="libri_dev_m/b1b-174-50561-0003.wav"></audio></td>
-                    <td><audio controls src="libri_test_f/b1b-121-127105-0029.wav"></audio></td>
-                    <td><audio controls src="libri_test_m/b1b-61-70970-0002.wav"></audio></td>
+                    <td>Baseline-1</td>
+                    <td><audio controls src="libri_dev_f/b1-84-121550-0031.wav"></audio></td>
+                    <td><audio controls src="libri_dev_m/b1-174-50561-0003.wav"></audio></td>
+                    <td><audio controls src="libri_test_f/b1-121-127105-0029.wav"></audio></td>
+                    <td><audio controls src="libri_test_m/b1-61-70970-0002.wav"></audio></td>
                 </tr>
                 <!-- B2 -->
                 <tr>
-                    <td>B2</td>
-                    <td><audio controls src="libri_dev_f/mcadams-84-121550-0031.wav"></audio></td>
-                    <td><audio controls src="libri_dev_m/mcadams-174-50561-0003.wav"></audio></td>
-                    <td><audio controls src="libri_test_f/mcadams-121-127105-0029.wav"></audio></td>
-                    <td><audio controls src="libri_test_m/mcadams-61-70970-0002.wav"></audio></td>
+                    <td>Baseline-2</td>
+                    <td><audio controls src="libri_dev_f/b2-84-121550-0031.wav"></audio></td>
+                    <td><audio controls src="libri_dev_m/b2-174-50561-0003.wav"></audio></td>
+                    <td><audio controls src="libri_test_f/b2-121-127105-0029.wav"></audio></td>
+                    <td><audio controls src="libri_test_m/b2-61-70970-0002.wav"></audio></td>
                 </tr>
                 <!-- B3 -->
                 <tr>
-                    <td>B3</td>
-                    <td><audio controls src="libri_dev_f/sttts-84-121550-0031.wav"></audio></td>
-                    <td><audio controls src="libri_dev_m/sttts-174-50561-0003.wav"></audio></td>
-                    <td><audio controls src="libri_test_f/sttts-121-127105-0029.wav"></audio></td>
-                    <td><audio controls src="libri_test_m/sttts-61-70970-0002.wav"></audio></td>
+                    <td>Baseline-3</td>
+                    <td><audio controls src="libri_dev_f/b3-84-121550-0031.wav"></audio></td>
+                    <td><audio controls src="libri_dev_m/b3-174-50561-0003.wav"></audio></td>
+                    <td><audio controls src="libri_test_f/b3-121-127105-0029.wav"></audio></td>
+                    <td><audio controls src="libri_test_m/b3-61-70970-0002.wav"></audio></td>
                 </tr>
                 <!-- B4 -->
                 <tr>
-                    <td>B4</td>
-                    <td><audio controls src="libri_dev_f/nac-84-121550-0031.wav"></audio></td>
-                    <td><audio controls src="libri_dev_m/nac-174-50561-0003.wav"></audio></td>
-                    <td><audio controls src="libri_test_f/nac-121-127105-0029.wav"></audio></td>
-                    <td><audio controls src="libri_test_m/nac-61-70970-0002.wav"></audio></td>
+                    <td>Baseline-4</td>
+                    <td><audio controls src="libri_dev_f/b4-84-121550-0031.wav"></audio></td>
+                    <td><audio controls src="libri_dev_m/b4-174-50561-0003.wav"></audio></td>
+                    <td><audio controls src="libri_test_f/b4-121-127105-0029.wav"></audio></td>
+                    <td><audio controls src="libri_test_m/b4-61-70970-0002.wav"></audio></td>
                 </tr>
                 <!-- B5 -->
                 <tr>
-                    <td>B5</td>
-                    <td><audio controls src="libri_dev_f/w2v-84-121550-0031.wav"></audio></td>
-                    <td><audio controls src="libri_dev_m/w2v-174-50561-0003.wav"></audio></td>
-                    <td><audio controls src="libri_test_f/w2v-121-127105-0029.wav"></audio></td>
-                    <td><audio controls src="libri_test_m/w2v-61-70970-0002.wav"></audio></td>
+                    <td>Baseline-5</td>
+                    <td><audio controls src="libri_dev_f/b5-84-121550-0031.wav"></audio></td>
+                    <td><audio controls src="libri_dev_m/b5-174-50561-0003.wav"></audio></td>
+                    <td><audio controls src="libri_test_f/b5-121-127105-0029.wav"></audio></td>
+                    <td><audio controls src="libri_test_m/b5-61-70970-0002.wav"></audio></td>
                 </tr>
                 <!-- B6 -->
                 <tr>
-                    <td>B6</td>
-                    <td><audio controls src="libri_dev_f/600h-84-121550-0031.wav"></audio></td>
-                    <td><audio controls src="libri_dev_m/600h-174-50561-0003.wav"></audio></td>
-                    <td><audio controls src="libri_test_f/600h-121-127105-0029.wav"></audio></td>
-                    <td><audio controls src="libri_test_m/600h-61-70970-0002.wav"></audio></td>
+                    <td>Baseline-6</td>
+                    <td><audio controls src="libri_dev_f/b6-84-121550-0031.wav"></audio></td>
+                    <td><audio controls src="libri_dev_m/b6-174-50561-0003.wav"></audio></td>
+                    <td><audio controls src="libri_test_f/b6-121-127105-0029.wav"></audio></td>
+                    <td><audio controls src="libri_test_m/b6-61-70970-0002.wav"></audio></td>
                 </tr>
-                <!-- AER -->
+                <!-- Proposed Method -->
                 <tr>
-                    <td>AER</td>
-                    <td><audio controls src="libri_dev_f/mine-84-121550-0031.wav"></audio></td>
-                    <td><audio controls src="libri_dev_m/mine-174-50561-0003.wav"></audio></td>
-                    <td><audio controls src="libri_test_f/mine-121-127105-0029.wav"></audio></td>
-                    <td><audio controls src="libri_test_m/mine-61-70970-0002.wav"></audio></td>
+                    <td>Proposed</td>
+                    <td><audio controls src="libri_dev_f/proposed-84-121550-0031.wav"></audio></td>
+                    <td><audio controls src="libri_dev_m/proposed-174-50561-0003.wav"></audio></td>
+                    <td><audio controls src="libri_test_f/proposed-121-127105-0029.wav"></audio></td>
+                    <td><audio controls src="libri_test_m/proposed-61-70970-0002.wav"></audio></td>
                 </tr>
             </tbody>
         </table>
@@ -232,34 +251,39 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Row 1: w/o AER -->
+                <!-- Row 1: w/o Proposed Module -->
                 <tr>
-                    <td>w/o AER</td>
-                    <td><audio controls src="IEMOCAP_ang/ori-Ses04F_impro05_F013.wav"></audio></td>
-                    <td><audio controls src="IEMOCAP_hap/ori-Ses02F_impro07_F015.wav"></audio></td>
-                    <td><audio controls src="IEMOCAP_neu/ori-Ses05F_impro08_F018.wav"></audio></td>
-                    <td><audio controls src="IEMOCAP_sad/ori-Ses01M_impro02_M002.wav"></audio></td>
+                    <td>w/o Restoration</td>
+                    <td><audio controls src="IEMOCAP_ang/worest-Ses04F_impro05_F013.wav"></audio></td>
+                    <td><audio controls src="IEMOCAP_hap/worest-Ses02F_impro07_F015.wav"></audio></td>
+                    <td><audio controls src="IEMOCAP_neu/worest-Ses05F_impro08_F018.wav"></audio></td>
+                    <td><audio controls src="IEMOCAP_sad/worest-Ses01M_impro02_M002.wav"></audio></td>
                 </tr>
 
-                <!-- Row 2: w/o γt -->
+                <!-- Row 2: w/o Energy Guidance -->
                 <tr>
-                    <td>w/o &gamma;<sub>t</sub></td>
-                    <td><audio controls src="IEMOCAP_ang/wo-Ses04F_impro05_F013.wav"></audio></td>
-                    <td><audio controls src="IEMOCAP_hap/wo-Ses02F_impro07_F015.wav"></audio></td>
-                    <td><audio controls src="IEMOCAP_neu/wo-Ses05F_impro08_F018.wav"></audio></td>
-                    <td><audio controls src="IEMOCAP_sad/wo-Ses01M_impro02_M002.wav"></audio></td>
+                    <td>w/o Energy Guidance</td>
+                    <td><audio controls src="IEMOCAP_ang/woenergy-Ses04F_impro05_F013.wav"></audio></td>
+                    <td><audio controls src="IEMOCAP_hap/woenergy-Ses02F_impro07_F015.wav"></audio></td>
+                    <td><audio controls src="IEMOCAP_neu/woenergy-Ses05F_impro08_F018.wav"></audio></td>
+                    <td><audio controls src="IEMOCAP_sad/woenergy-Ses01M_impro02_M002.wav"></audio></td>
                 </tr>
 
-                <!-- Row 3: Ours -->
+                <!-- Row 3: Proposed Method -->
                 <tr>
-                    <td>Ours</td>
-                    <td><audio controls src="IEMOCAP_ang/AER-Ses04F_impro05_F013.wav"></audio></td>
-                    <td><audio controls src="IEMOCAP_hap/AER-Ses02F_impro07_F015.wav"></audio></td>
-                    <td><audio controls src="IEMOCAP_neu/AER-Ses05F_impro08_F018.wav"></audio></td>
-                    <td><audio controls src="IEMOCAP_sad/AER-Ses01M_impro02_M002.wav"></audio></td>
+                    <td>Proposed</td>
+                    <td><audio controls src="IEMOCAP_ang/proposed-Ses04F_impro05_F013.wav"></audio></td>
+                    <td><audio controls src="IEMOCAP_hap/proposed-Ses02F_impro07_F015.wav"></audio></td>
+                    <td><audio controls src="IEMOCAP_neu/proposed-Ses05F_impro08_F018.wav"></audio></td>
+                    <td><audio controls src="IEMOCAP_sad/proposed-Ses01M_impro02_M002.wav"></audio></td>
                 </tr>
             </tbody>
         </table>
+    </div>
+
+    <div class="anonymous-notice">
+        <strong>Note:</strong> Audio files are provided for review purposes only. 
+        Baseline systems correspond to VoicePrivacy Challenge benchmarks as described in the paper.
     </div>
 
 </body>
