@@ -7,6 +7,7 @@
 ## Quick Access
 
 Download Folder: Download the AER_audio_sample folder from this repository to your local machine.
+
 Open Demo Page: Locate and open the index.html file within that folder using any modern web browser
 
 ---
